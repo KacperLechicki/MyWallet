@@ -87,7 +87,6 @@ main .options {
   align-items: center;
   border: 1px solid var(--mainTextDark);
   border-radius: 8px;
-  overflow: auto;
   padding: 10px;
   width: clamp(250px, 80vw, 600px);
 }
@@ -175,7 +174,6 @@ main .transactions {
   align-items: center;
   border: 1px solid var(--mainTextDark);
   border-radius: 8px;
-  overflow: auto;
   margin-right: 20px;
   margin-left: 20px;
   padding: 20px;
@@ -371,5 +369,11 @@ main .transactions .transaction-list .expenses-area .transaction-amount {
   }
   main .transactions .transaction-list .transaction-amount button {
     padding: 6px 7px 4px 8px;
+  }
+  .add-transaction-panel .title {
+    font-size: 3rem;
+  }
+  .add-transaction-panel small {
+    font-size: 1.4rem;
   }
 }/*# sourceMappingURL=main.css.map */
