@@ -1,0 +1,10 @@
+@mixin box {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-bottom: 50px;
+	align-items: center;
+	border: 1px solid var(--mainTextDark);
+	border-radius: 8px;
+	overflow: auto;
+}

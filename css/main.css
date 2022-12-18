@@ -34,6 +34,11 @@ body {
   background-image: var(--backgroundLight);
 }
 
+hr {
+  border: none;
+  border-top: 1px solid rgba(15, 18, 37, 0.5921568627);
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -60,6 +65,9 @@ main {
   justify-content: flex-start;
   align-items: center;
 }
+main h2 {
+  font-weight: lighter;
+}
 main .title {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -71,14 +79,16 @@ main .options {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-right: 20px;
   margin-bottom: 50px;
-  padding: 10px;
-  width: clamp(250px, 80vw, 600px);
   align-items: center;
   border: 1px solid var(--mainTextDark);
   border-radius: 8px;
   overflow: auto;
+  padding: 10px;
+  width: clamp(250px, 80vw, 600px);
+}
+main .options .title {
+  font-size: 2.2rem;
 }
 main .options p {
   margin-bottom: 25px;
@@ -94,7 +104,6 @@ main .options .controls {
   width: 80%;
 }
 main .options .controls button {
-  position: relative;
   margin-bottom: 15px;
   padding: 10px;
   width: 200px;
@@ -158,15 +167,89 @@ main .transactions {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-right: 20px;
-  margin-left: 20px;
   margin-bottom: 50px;
-  padding: 10px;
-  width: clamp(250px, 80vw, 850px);
   align-items: center;
   border: 1px solid var(--mainTextDark);
   border-radius: 8px;
   overflow: auto;
+  margin-right: 20px;
+  margin-left: 20px;
+  padding: 20px;
+  width: clamp(250px, 80vw, 850px);
+}
+main .transactions .title {
+  font-size: 2.2rem;
+}
+main .transactions h3 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+main .transactions .transaction-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-around;
+  width: 100%;
+}
+main .transactions .transaction-list .transaction {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 80%;
+}
+main .transactions .transaction-list .transaction-amount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: clamp(90px, 50%, 94px);
+}
+main .transactions .transaction-list .transaction-amount button {
+  margin-left: 10px;
+  padding: 3px 5px 2px 6px;
+  background: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+main .transactions .transaction-list .transaction-amount button i {
+  font-size: 2rem;
+}
+main .transactions .transaction-list .transaction-amount button:hover {
+  transform: scale(0.85);
+}
+main .transactions .transaction-list .transaction-name i {
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+main .transactions .transaction-list .income-area,
+main .transactions .transaction-list .expenses-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+  width: 100%;
+  max-height: 600px;
+}
+main .transactions .transaction-list .income-area {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+main .transactions .transaction-list .income-area h3,
+main .transactions .transaction-list .income-area .transaction-amount {
+  color: rgb(37, 167, 102);
+  font-weight: bold;
+}
+main .transactions .transaction-list .expenses-area {
+  margin-top: 15px;
+}
+main .transactions .transaction-list .expenses-area h3,
+main .transactions .transaction-list .expenses-area .transaction-amount {
+  color: rgb(190, 56, 46);
+  font-weight: bold;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 375px) {
@@ -184,6 +267,14 @@ main .transactions {
   }
   main .options {
     order: 2;
+    margin-right: 20px;
     width: 400px;
+  }
+  main .transactions .transaction-list {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  main .transactions .transaction-list .income-area {
+    padding: 0;
   }
 }/*# sourceMappingURL=main.css.map */
