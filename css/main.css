@@ -45,6 +45,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 15px;
   margin-bottom: 20px;
   height: 150px;
 }
@@ -84,6 +85,7 @@ main .options {
   align-items: center;
   border: 1px solid var(--mainTextDark);
   border-radius: 8px;
+  overflow: auto;
   padding: 10px;
   width: clamp(250px, 80vw, 600px);
 }
@@ -171,11 +173,11 @@ main .transactions {
   align-items: center;
   border: 1px solid var(--mainTextDark);
   border-radius: 8px;
+  overflow: auto;
   margin-right: 20px;
   margin-left: 20px;
   padding: 20px;
   width: clamp(250px, 80vw, 850px);
-  max-height: 400px;
 }
 main .transactions .title {
   font-size: 2.2rem;
@@ -249,7 +251,7 @@ main .transactions .transaction-list .income-area .transaction-amount {
   font-weight: bold;
 }
 main .transactions .transaction-list .expenses-area {
-  margin-top: 15px;
+  margin-top: 25px;
 }
 main .transactions .transaction-list .expenses-area h3,
 main .transactions .transaction-list .expenses-area .transaction-amount {
@@ -281,6 +283,9 @@ main .transactions .transaction-list .expenses-area .transaction-amount {
   }
   main .transactions .transaction-list .income-area {
     padding: 0;
+  }
+  main .transactions .transaction-list .expenses-area {
+    margin-top: 10px;
   }
   main .transactions .transaction-list .transaction-amount button {
     padding: 6px 7px 4px 8px;
