@@ -78,7 +78,7 @@ main {
                 border: 1px solid var(--mainTextDark);
                 border-radius: 5px;
                 cursor: pointer;
-                transition: background-color 0.1s, color 0.3s;
+                transition: background-color 0.1s, color 0.3s, box-shadow 0.15s;
 
                 i {
                     margin-right: 5px;
@@ -123,14 +123,23 @@ main {
                     border: 1px solid var(--mainTextDark);
                     border-radius: 50%;
                     cursor: pointer;
+                    transition: box-shadow 0.25s;
                 }
 
                 .light {
                     background-color: var(--mainTextLight);
+
+                    &:hover {
+                        box-shadow: 0 0 15px #8b919e;
+                    }
                 }
 
                 .dark {
                     background-color: var(--mainTextDark);
+
+                    &:hover {
+                        box-shadow: 0 0 15px #0f1225;
+                    }
                 }
             }
         }
@@ -156,6 +165,10 @@ main {
 }
 
 @media only screen and (min-width: 768px) {
+    header {
+        margin-bottom: 50px;
+    }
+
     main {
         flex-direction: row;
         justify-content: space-around;
