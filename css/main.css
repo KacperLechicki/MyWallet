@@ -180,6 +180,7 @@ main .transactions {
   margin-left: 20px;
   padding: 20px;
   width: clamp(250px, 80vw, 850px);
+  max-height: 500px;
 }
 main .transactions .title {
   letter-spacing: 1px;
@@ -195,7 +196,16 @@ main .transactions .transaction-list {
   justify-content: center;
   width: 100%;
 }
-main .transactions .transaction-list .transaction {
+main .transactions .transaction-list .transactionsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-height: 200px;
+  overflow: auto;
+}
+main .transactions .transaction-list .transactionsContainer .transaction {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -203,14 +213,14 @@ main .transactions .transaction-list .transaction {
   margin-bottom: 10px;
   width: 80%;
 }
-main .transactions .transaction-list .transaction-amount {
+main .transactions .transaction-list .transactionsContainer .transaction-amount {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: clamp(90px, 50%, 94px);
   font-size: 1.8rem;
 }
-main .transactions .transaction-list .transaction-amount button {
+main .transactions .transaction-list .transactionsContainer .transaction-amount button {
   margin-left: 10px;
   padding: 6px 7px 4px 8px;
   background: none;
@@ -219,13 +229,13 @@ main .transactions .transaction-list .transaction-amount button {
   cursor: pointer;
   transition: transform 0.3s;
 }
-main .transactions .transaction-list .transaction-amount button i {
+main .transactions .transaction-list .transactionsContainer .transaction-amount button i {
   font-size: 2rem;
 }
-main .transactions .transaction-list .transaction-amount button:hover {
+main .transactions .transaction-list .transactionsContainer .transaction-amount button:hover {
   transform: scale(0.85);
 }
-main .transactions .transaction-list .transaction-name i {
+main .transactions .transaction-list .transactionsContainer .transaction-name i {
   margin-right: 5px;
   margin-bottom: 5px;
 }
@@ -262,7 +272,7 @@ main .transactions .transaction-list .expenses-area .transaction-amount {
 }
 
 .add-transaction-panel {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
