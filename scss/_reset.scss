@@ -1,0 +1,23 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    background-color: none;
+    color: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --white: whitesmoke;
+    --black: black;
+    --backgroundDark: linear-gradient(70deg, #0a102c, #090d2d 60%);
+    --backgroundLight: linear-gradient(70deg, #cdd1e0, #c5c8d3);
+}
