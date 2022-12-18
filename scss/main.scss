@@ -49,6 +49,8 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin-right: 20px;
+        margin-bottom: 50px;
         padding: 10px;
         width: clamp(250px, 80vw, 600px);
         align-items: center;
@@ -143,6 +145,21 @@ main {
                 }
             }
         }
+    }
+
+    .transactions {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 20px;
+        margin-left: 20px;
+        margin-bottom: 50px;
+        padding: 10px;
+        width: clamp(250px, 80vw, 850px);
+        align-items: center;
+        border: 1px solid var(--mainTextDark);
+        border-radius: 8px;
+        overflow: auto;
     }
 }
 
