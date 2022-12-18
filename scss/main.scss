@@ -7,3 +7,162 @@ body {
     color: var(--mainTextDark);
     background-image: var(--backgroundLight);
 }
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    height: 150px;
+
+    h1 {
+        margin-bottom: 5px;
+        font-size: 4.4rem;
+        font-weight: 200;
+
+        i {
+            margin-right: 10px;
+        }
+    }
+
+    p {
+        font-size: 1.6rem;
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    .title {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.8rem;
+    }
+
+    .options {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+        width: clamp(250px, 80vw, 600px);
+        align-items: center;
+        border: 1px solid var(--mainTextDark);
+        border-radius: 8px;
+        overflow: auto;
+
+        p {
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 3.2rem;
+            font-weight: bold;
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            width: 80%;
+
+            button {
+                position: relative;
+                margin-bottom: 15px;
+                padding: 10px;
+                width: 200px;
+                border: 1px solid var(--mainTextDark);
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.1s, color 0.3s;
+
+                i {
+                    margin-right: 5px;
+                }
+
+                &:hover {
+                    background-color: var(--hoverDark);
+                    color: var(--mainTextLight);
+                }
+
+                &:active {
+                    background-color: var(--activeDark);
+                    box-shadow: inset 4px 3px 5px rgba(0, 0, 0, 0.459);
+                    text-shadow: 3px 3px 5px rgb(0, 0, 0, 0.5);
+                }
+            }
+
+            .delete-all {
+                margin-bottom: 10px;
+            }
+        }
+
+        .style-selection {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+
+            .color-buttons {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                margin-bottom: 15px;
+                width: 60%;
+                max-width: 200px;
+
+                .light,
+                .dark {
+                    width: 40px;
+                    height: 40px;
+                    border: 1px solid var(--mainTextDark);
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+
+                .light {
+                    background-color: var(--mainTextLight);
+                }
+
+                .dark {
+                    background-color: var(--mainTextDark);
+                }
+            }
+        }
+    }
+}
+
+//-------------------------------------------------------------
+//-------------------------------------------------------------
+//-------------------------------------------------------------
+//-------------------------------------------------------------
+//-------------------------------------------------------------
+
+@media only screen and (min-width: 320px) and (max-width: 375px) {
+    main {
+        .options {
+            .controls {
+                button {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    main {
+        flex-direction: row;
+        justify-content: space-around;
+
+        .options {
+            order: 2;
+            width: 400px;
+        }
+    }
+}
