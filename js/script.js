@@ -73,10 +73,8 @@ const createNewTransaction = () => {
 	newTransaction.innerHTML = `<p class="transaction-name">${categoryIcon} ${newTransactionName.value}</p>
     <p class="transaction-amount">${newTransactionAmount.value}zł <button class="delete" onclick="deleteTransaction(${ID})"><i class="fas fa-times"></i></button></p>`;
 
-	// <p class="transaction-name"><i class="fas fa-film"></i>Free time</p>
-	//                         <p class="transaction-amount">-230zł <button class="delete"><i
-	//                                     class="fas fa-times"></i></button></p>
-
+	//trzeba odroznic kontener wydatkow od konteneru dochodow!!!!
+    //i ogarnać dodane transakcje, bo sie rozjezdzaja
 	newTransactionAmount.value > 0
 		? transactionContainer.appendChild(
 				incomeSection.appendChild(newTransaction)

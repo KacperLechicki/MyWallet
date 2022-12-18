@@ -1,28 +1,22 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-::-webkit-scrollbar {
-    width: 2px;
-    background-color: black;
-    color: black;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 html {
-    font-size: 62.5%;
+	font-size: 62.5%;
 }
 
 :root {
-    --white: whitesmoke;
-    --black: black;
-    --mainTextLight: #c4c9d8;
-    --mainTextDark: #0f1225;
-    --backgroundDark: linear-gradient(70deg, #0f1221, #0f1225 60%);
-    --backgroundLight: linear-gradient(70deg, rgb(217, 219, 227), #d2d5dd); 
-    --hoverDark:  rgba(15, 18, 37, 0.609);
-    --activeDark: rgb(15, 18, 37, 0.8);
+	--white: whitesmoke;
+	--black: black;
+	--mainTextLight: #c4c9d8;
+	--mainTextDark: #0f1225;
+	--backgroundDark: linear-gradient(70deg, #0f1221, #0f1225 60%);
+	--backgroundLight: linear-gradient(70deg, rgb(217, 219, 227), #d2d5dd);
+	--hoverDark: rgba(15, 18, 37, 0.609);
+	--activeDark: rgb(15, 18, 37, 0.8);
 }

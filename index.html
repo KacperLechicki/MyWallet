@@ -99,11 +99,13 @@
         <h2 class="title">Add new transaction</h2>
         <label for="name">Title:</label>
         <small>(enter the transaction title)</small>
-        <input type="text" id="name">
+        <input type="text" id="name" maxlength="20">
 
         <label for="amount">Amount:</label>
         <small>(if you are adding an expense, put a minus sign at the beginning of the amount)</small>
-        <input type="number" id="amount">
+        <input type="number" id="amount"
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            type="number" maxlength="12">
 
         <label for="category">Choose category:</label>
         <small>( [+] means income, [-] means expense)</small>

@@ -6,12 +6,6 @@
   padding: 0;
 }
 
-::-webkit-scrollbar {
-  width: 2px;
-  background-color: black;
-  color: black;
-}
-
 html {
   font-size: 62.5%;
 }
@@ -199,7 +193,7 @@ main .transactions .transaction-list .transactionsContainer {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 250px;
   max-height: 200px;
   overflow: auto;
 }
