@@ -7,8 +7,9 @@
 }
 
 ::-webkit-scrollbar {
-  background-color: none;
-  color: none;
+  width: 2px;
+  background-color: black;
+  color: black;
 }
 
 html {
@@ -83,7 +84,6 @@ main .options {
   align-items: center;
   border: 1px solid var(--mainTextDark);
   border-radius: 8px;
-  overflow: auto;
   padding: 10px;
   width: clamp(250px, 80vw, 600px);
 }
@@ -171,11 +171,11 @@ main .transactions {
   align-items: center;
   border: 1px solid var(--mainTextDark);
   border-radius: 8px;
-  overflow: auto;
   margin-right: 20px;
   margin-left: 20px;
   padding: 20px;
   width: clamp(250px, 80vw, 850px);
+  max-height: 400px;
 }
 main .transactions .title {
   font-size: 2.2rem;
@@ -204,10 +204,11 @@ main .transactions .transaction-list .transaction-amount {
   justify-content: space-between;
   align-items: center;
   width: clamp(90px, 50%, 94px);
+  font-size: 1.8rem;
 }
 main .transactions .transaction-list .transaction-amount button {
   margin-left: 10px;
-  padding: 3px 5px 2px 6px;
+  padding: 6px 7px 4px 8px;
   background: none;
   border: none;
   border-radius: 5px;
@@ -233,6 +234,10 @@ main .transactions .transaction-list .expenses-area {
   margin-top: 10px;
   width: 100%;
   max-height: 600px;
+}
+main .transactions .transaction-list .income-area h3,
+main .transactions .transaction-list .expenses-area h3 {
+  font-size: 2rem;
 }
 main .transactions .transaction-list .income-area {
   margin-bottom: 10px;
@@ -276,5 +281,8 @@ main .transactions .transaction-list .expenses-area .transaction-amount {
   }
   main .transactions .transaction-list .income-area {
     padding: 0;
+  }
+  main .transactions .transaction-list .transaction-amount button {
+    padding: 6px 7px 4px 8px;
   }
 }/*# sourceMappingURL=main.css.map */
