@@ -50,6 +50,7 @@ header {
   height: 150px;
 }
 header h1 {
+  letter-spacing: 1px;
   margin-bottom: 5px;
   font-size: 4.4rem;
   font-weight: 200;
@@ -73,6 +74,7 @@ main h2 {
 main .title {
   margin-top: 15px;
   margin-bottom: 15px;
+  letter-spacing: 1px;
   text-align: center;
   text-transform: uppercase;
   font-size: 1.8rem;
@@ -180,6 +182,7 @@ main .transactions {
   width: clamp(250px, 80vw, 850px);
 }
 main .transactions .title {
+  letter-spacing: 1px;
   font-size: 2.2rem;
 }
 main .transactions h3 {
@@ -190,7 +193,6 @@ main .transactions .transaction-list {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: space-around;
   width: 100%;
 }
 main .transactions .transaction-list .transaction {
@@ -257,6 +259,26 @@ main .transactions .transaction-list .expenses-area h3,
 main .transactions .transaction-list .expenses-area .transaction-amount {
   color: rgb(190, 56, 46);
   font-weight: bold;
+}
+
+.add-transaction-panel {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--mainTextLight);
+  background-image: var(--backgroundDark);
+}
+.add-transaction-panel .title {
+  letter-spacing: 1px;
+  font-size: 2.4rem;
+  font-weight: lighter;
+  text-transform: uppercase;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 375px) {
