@@ -135,6 +135,23 @@ const countMoney = (money) => {
 	}
 };
 
+const deleteTransaction = (ID) => {
+	const transactionToDelete = document.getElementById(ID);
+	console.log(transactionToDelete.childNodes);
+	const transactionAmount = parseFloat(
+		transactionToDelete.childNodes[1].textContent
+	);
+	const indexOfTransaction = moneyArr.indexOf(transactionAmount);
+
+	moneyArr.splice(indexOfTransaction, 1);
+
+	transactionToDelete.classList.contains('income')
+		? transactionContainerIncome.removeChild(transactionToDelete)
+		: transactionContainerExpenses.removeChild(transactionToDelete);
+
+	countMoney(moneyArr);
+};
+
 //----------------------------------------------------------------
 //----------------------------------------------------------------
 //----------------------------------------------------------------
