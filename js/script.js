@@ -138,10 +138,9 @@ const countMoney = (money) => {
 
 const deleteTransaction = (ID) => {
 	const transactionToDelete = document.getElementById(ID);
-	console.log(transactionToDelete.childNodes);
 	const transactionAmount = parseFloat(
-		transactionToDelete.childNodes[1].textContent
-	);
+		transactionToDelete.childNodes[2].innerText
+		);
 	const indexOfTransaction = moneyArr.indexOf(transactionAmount);
 
 	moneyArr.splice(indexOfTransaction, 1);
