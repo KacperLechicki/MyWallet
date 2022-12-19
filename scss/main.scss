@@ -11,7 +11,7 @@ body {
 
 hr {
 	border: none;
-	border-top: 1px solid #0f122597;
+	border-top: 1px solid #0f1225e0;
 }
 
 header {
@@ -159,9 +159,9 @@ main {
 		@include box;
 		margin-right: 20px;
 		margin-left: 20px;
-		padding: 20px;
+		padding: 10px;
 		width: clamp(250px, 80vw, 850px);
-		max-height: 500px;
+		max-height: 550px;
 
 		.title {
 			letter-spacing: 1px;
@@ -180,7 +180,7 @@ main {
 			// align-items: space-around;
 			width: 100%;
 
-			.transactionsContainer {
+			.transactionsContainerIncome, .transactionsContainerExpenses {
 				display: flex;
 				flex-direction: column;
 				justify-content: space-between;
@@ -195,13 +195,17 @@ main {
 					justify-content: center;
 					align-items: center;
 					margin-bottom: 10px;
+					padding: 5px;
 					width: 80%;
+					border: 1px solid rgba(0, 0, 0, 0.193);
+					border-radius: 8px;
 
 					&-amount {
 						display: flex;
-						justify-content: space-between;
+						flex-direction: column;
+						justify-content: center;
 						align-items: center;
-						width: clamp(90px, 50%, 94px);
+						width: 100%;
 						font-size: 1.8rem;
 
 						button {
@@ -224,6 +228,9 @@ main {
 					}
 
 					&-name {
+						width: 100%;
+						text-align: center;
+
 						i {
 							margin-right: 5px;
 							margin-bottom: 5px;
@@ -386,6 +393,8 @@ main {
 		}
 
 		.transactions {
+			height: 450px;
+
 			.transaction-list {
 				flex-direction: row;
 				align-items: flex-start;
@@ -398,10 +407,12 @@ main {
 					margin-top: 10px;
 				}
 
-				.transaction {
-					&-amount {
-						button {
-							padding: 6px 7px 4px 8px;
+				.transactionsContainer {
+					.transaction {
+						&-amount {
+							button {
+								padding: 6px 7px 4px 8px;
+							}
 						}
 					}
 				}

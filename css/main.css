@@ -31,7 +31,7 @@ body {
 
 hr {
   border: none;
-  border-top: 1px solid rgba(15, 18, 37, 0.5921568627);
+  border-top: 1px solid rgba(15, 18, 37, 0.8784313725);
 }
 
 header {
@@ -170,9 +170,9 @@ main .transactions {
   border-radius: 8px;
   margin-right: 20px;
   margin-left: 20px;
-  padding: 20px;
+  padding: 10px;
   width: clamp(250px, 80vw, 850px);
-  max-height: 500px;
+  max-height: 550px;
 }
 main .transactions .title {
   letter-spacing: 1px;
@@ -188,7 +188,7 @@ main .transactions .transaction-list {
   justify-content: center;
   width: 100%;
 }
-main .transactions .transaction-list .transactionsContainer {
+main .transactions .transaction-list .transactionsContainerIncome, main .transactions .transaction-list .transactionsContainerExpenses {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -197,22 +197,26 @@ main .transactions .transaction-list .transactionsContainer {
   max-height: 200px;
   overflow: auto;
 }
-main .transactions .transaction-list .transactionsContainer .transaction {
+main .transactions .transaction-list .transactionsContainerIncome .transaction, main .transactions .transaction-list .transactionsContainerExpenses .transaction {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
+  padding: 5px;
   width: 80%;
+  border: 1px solid rgba(0, 0, 0, 0.193);
+  border-radius: 8px;
 }
-main .transactions .transaction-list .transactionsContainer .transaction-amount {
+main .transactions .transaction-list .transactionsContainerIncome .transaction-amount, main .transactions .transaction-list .transactionsContainerExpenses .transaction-amount {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  width: clamp(90px, 50%, 94px);
+  width: 100%;
   font-size: 1.8rem;
 }
-main .transactions .transaction-list .transactionsContainer .transaction-amount button {
+main .transactions .transaction-list .transactionsContainerIncome .transaction-amount button, main .transactions .transaction-list .transactionsContainerExpenses .transaction-amount button {
   margin-left: 10px;
   padding: 6px 7px 4px 8px;
   background: none;
@@ -221,13 +225,17 @@ main .transactions .transaction-list .transactionsContainer .transaction-amount 
   cursor: pointer;
   transition: transform 0.3s;
 }
-main .transactions .transaction-list .transactionsContainer .transaction-amount button i {
+main .transactions .transaction-list .transactionsContainerIncome .transaction-amount button i, main .transactions .transaction-list .transactionsContainerExpenses .transaction-amount button i {
   font-size: 2rem;
 }
-main .transactions .transaction-list .transactionsContainer .transaction-amount button:hover {
+main .transactions .transaction-list .transactionsContainerIncome .transaction-amount button:hover, main .transactions .transaction-list .transactionsContainerExpenses .transaction-amount button:hover {
   transform: scale(0.85);
 }
-main .transactions .transaction-list .transactionsContainer .transaction-name i {
+main .transactions .transaction-list .transactionsContainerIncome .transaction-name, main .transactions .transaction-list .transactionsContainerExpenses .transaction-name {
+  width: 100%;
+  text-align: center;
+}
+main .transactions .transaction-list .transactionsContainerIncome .transaction-name i, main .transactions .transaction-list .transactionsContainerExpenses .transaction-name i {
   margin-right: 5px;
   margin-bottom: 5px;
 }
@@ -351,6 +359,9 @@ main .transactions .transaction-list .expenses-area .transaction-amount {
     margin-right: 20px;
     width: 400px;
   }
+  main .transactions {
+    height: 450px;
+  }
   main .transactions .transaction-list {
     flex-direction: row;
     align-items: flex-start;
@@ -361,7 +372,7 @@ main .transactions .transaction-list .expenses-area .transaction-amount {
   main .transactions .transaction-list .expenses-area {
     margin-top: 10px;
   }
-  main .transactions .transaction-list .transaction-amount button {
+  main .transactions .transaction-list .transactionsContainer .transaction-amount button {
     padding: 6px 7px 4px 8px;
   }
   .add-transaction-panel .title {

@@ -7,7 +7,12 @@ const deleteBtn = document.querySelector('.delete');
 const lightBtn = document.querySelector('.light');
 const darkBtn = document.querySelector('.dark');
 
-const transactionContainer = document.querySelector('.transactionsContainer');
+const transactionContainerIncome = document.querySelector(
+	'.transactionsContainerIncome'
+);
+const transactionContainerExpenses = document.querySelector(
+	'.transactionsContainerExpenses'
+);
 
 const addTransactionPanel = document.querySelector('.add-transaction-panel');
 
@@ -47,7 +52,7 @@ const checkForm = () => {
 	if (
 		newTransactionName.value !== '' &&
 		newTransactionAmount.value !== '' &&
-		newTransactionAmount.value !== 'none'
+		newTransactionCategory.value !== 'none'
 	) {
 		createNewTransaction();
 	} else {
@@ -73,13 +78,11 @@ const createNewTransaction = () => {
 	newTransaction.innerHTML = `<p class="transaction-name">${categoryIcon} ${newTransactionName.value}</p>
     <p class="transaction-amount">${newTransactionAmount.value}zł <button class="delete" onclick="deleteTransaction(${ID})"><i class="fas fa-times"></i></button></p>`;
 
-	//trzeba odroznic kontener wydatkow od konteneru dochodow!!!!
-    //i ogarnać dodane transakcje, bo sie rozjezdzaja
 	newTransactionAmount.value > 0
-		? transactionContainer.appendChild(
+		? transactionContainerIncome.appendChild(
 				incomeSection.appendChild(newTransaction)
 		  ) && newTransaction.classList.add('income')
-		: transactionContainer.appendChild(
+		: transactionContainerExpenses.appendChild(
 				expenseSection.appendChild(newTransaction)
 		  ) && newTransaction.classList.add('expense');
 
@@ -110,6 +113,9 @@ const checkCategory = (transaction) => {
 			categoryIcon = '<i class="fas fa-hamburger"></i>';
 			break;
 		case '[-] Bills':
+			categoryIcon = '<i class="fas fa-money-bill-wave"></i>';
+			break;
+		default:
 			categoryIcon = '<i class="fas fa-money-bill-wave"></i>';
 			break;
 	}
