@@ -70,29 +70,47 @@ const createNewTransaction = () => {
 	const newTransaction = document.createElement('div');
 	newTransaction.classList.add('transaction');
 	newTransaction.setAttribute('id', ID);
-	const newValue = parseFloat(newTransactionAmount.value).toFixed(2);
+	let newValue;
 
 	selectCategory();
 
 	checkCategory(selectedCategory);
 
-	newTransaction.innerHTML = `<p class="transaction-name">${categoryIcon} ${newTransactionName.value}</p>
+	if (
+		newTransactionAmount.value.charAt(0) == '-' &&
+		selectedCategory.charAt(1) == '+'
+	) {
+		alert('Income cannot be negative!');
+	} else {
+		if (selectedCategory.charAt(1) == '+' && newTransactionAmount.value > 0) {
+			transactionContainerIncome.appendChild(
+				incomeSection.appendChild(newTransaction)
+			);
+			newTransaction.classList.add('income');
+			newValue = parseFloat(newTransactionAmount.value).toFixed(2);
+		} else {
+			transactionContainerExpenses.appendChild(
+				expenseSection.appendChild(newTransaction)
+			);
+			newTransaction.classList.add('expense');
+			if (newTransactionAmount.value.charAt(0) != '-') {
+				newTransactionAmount.value = `-${newTransactionAmount.value}`;
+				newValue = parseFloat(newTransactionAmount.value).toFixed(2);
+			} else {
+				newValue = parseFloat(newTransactionAmount.value).toFixed(2);
+			}
+		}
+
+		newTransaction.innerHTML = `<p class="transaction-name">${categoryIcon} ${newTransactionName.value}</p>
     <p class="transaction-amount">${newValue}zł <button class="delete" onclick="deleteTransaction(${ID})"><i class="fas fa-times"></i></button></p>`;
 
-	newTransactionAmount.value > 0
-		? transactionContainerIncome.appendChild(
-				incomeSection.appendChild(newTransaction)
-		  ) && newTransaction.classList.add('income')
-		: transactionContainerExpenses.appendChild(
-				expenseSection.appendChild(newTransaction)
-		  ) && newTransaction.classList.add('expense');
+		moneyArr.push(parseFloat(newTransactionAmount.value));
+		countMoney(moneyArr);
 
-	moneyArr.push(parseFloat(newTransactionAmount.value));
-	countMoney(moneyArr);
-
-	hidePanel();
-	ID++;
-	clearInputs();
+		hidePanel();
+		ID++;
+		clearInputs();
+	}
 };
 
 const selectCategory = () => {
@@ -140,7 +158,8 @@ const deleteTransaction = (ID) => {
 	const transactionToDelete = document.getElementById(ID);
 	const transactionAmount = parseFloat(
 		transactionToDelete.childNodes[2].innerText
-		);
+	);
+
 	const indexOfTransaction = moneyArr.indexOf(transactionAmount);
 
 	moneyArr.splice(indexOfTransaction, 1);
