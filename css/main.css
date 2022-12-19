@@ -172,7 +172,7 @@ main .transactions {
   margin-left: 20px;
   padding: 10px;
   width: clamp(250px, 80vw, 850px);
-  max-height: 550px;
+  max-height: 650px;
 }
 main .transactions .title {
   letter-spacing: 1px;
@@ -188,7 +188,8 @@ main .transactions .transaction-list {
   justify-content: center;
   width: 100%;
 }
-main .transactions .transaction-list .transactionsContainerIncome, main .transactions .transaction-list .transactionsContainerExpenses {
+main .transactions .transaction-list .transactionsContainerIncome,
+main .transactions .transaction-list .transactionsContainerExpenses {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -197,18 +198,21 @@ main .transactions .transaction-list .transactionsContainerIncome, main .transac
   max-height: 200px;
   overflow: auto;
 }
-main .transactions .transaction-list .transactionsContainerIncome .transaction, main .transactions .transaction-list .transactionsContainerExpenses .transaction {
+main .transactions .transaction-list .transactionsContainerIncome .transaction,
+main .transactions .transaction-list .transactionsContainerExpenses .transaction {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
+  min-height: 90px;
   padding: 5px;
   width: 80%;
   border: 1px solid rgba(0, 0, 0, 0.193);
   border-radius: 8px;
 }
-main .transactions .transaction-list .transactionsContainerIncome .transaction-amount, main .transactions .transaction-list .transactionsContainerExpenses .transaction-amount {
+main .transactions .transaction-list .transactionsContainerIncome .transaction-amount,
+main .transactions .transaction-list .transactionsContainerExpenses .transaction-amount {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -216,7 +220,8 @@ main .transactions .transaction-list .transactionsContainerIncome .transaction-a
   width: 100%;
   font-size: 1.8rem;
 }
-main .transactions .transaction-list .transactionsContainerIncome .transaction-amount button, main .transactions .transaction-list .transactionsContainerExpenses .transaction-amount button {
+main .transactions .transaction-list .transactionsContainerIncome .transaction-amount button,
+main .transactions .transaction-list .transactionsContainerExpenses .transaction-amount button {
   margin-left: 10px;
   padding: 6px 7px 4px 8px;
   background: none;
@@ -225,17 +230,21 @@ main .transactions .transaction-list .transactionsContainerIncome .transaction-a
   cursor: pointer;
   transition: transform 0.3s;
 }
-main .transactions .transaction-list .transactionsContainerIncome .transaction-amount button i, main .transactions .transaction-list .transactionsContainerExpenses .transaction-amount button i {
+main .transactions .transaction-list .transactionsContainerIncome .transaction-amount button i,
+main .transactions .transaction-list .transactionsContainerExpenses .transaction-amount button i {
   font-size: 2rem;
 }
-main .transactions .transaction-list .transactionsContainerIncome .transaction-amount button:hover, main .transactions .transaction-list .transactionsContainerExpenses .transaction-amount button:hover {
+main .transactions .transaction-list .transactionsContainerIncome .transaction-amount button:hover,
+main .transactions .transaction-list .transactionsContainerExpenses .transaction-amount button:hover {
   transform: scale(0.85);
 }
-main .transactions .transaction-list .transactionsContainerIncome .transaction-name, main .transactions .transaction-list .transactionsContainerExpenses .transaction-name {
+main .transactions .transaction-list .transactionsContainerIncome .transaction-name,
+main .transactions .transaction-list .transactionsContainerExpenses .transaction-name {
   width: 100%;
   text-align: center;
 }
-main .transactions .transaction-list .transactionsContainerIncome .transaction-name i, main .transactions .transaction-list .transactionsContainerExpenses .transaction-name i {
+main .transactions .transaction-list .transactionsContainerIncome .transaction-name i,
+main .transactions .transaction-list .transactionsContainerExpenses .transaction-name i {
   margin-right: 5px;
   margin-bottom: 5px;
 }
@@ -346,7 +355,7 @@ main .transactions .transaction-list .expenses-area .transaction-amount {
     font-size: 1.2rem;
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 800px) {
   header {
     margin-bottom: 50px;
   }
@@ -360,7 +369,10 @@ main .transactions .transaction-list .expenses-area .transaction-amount {
     width: 400px;
   }
   main .transactions {
-    height: 450px;
+    height: 420px;
+  }
+  main .transactions .title {
+    margin-top: 0;
   }
   main .transactions .transaction-list {
     flex-direction: row;

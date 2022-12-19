@@ -161,7 +161,7 @@ main {
 		margin-left: 20px;
 		padding: 10px;
 		width: clamp(250px, 80vw, 850px);
-		max-height: 550px;
+		max-height: 650px;
 
 		.title {
 			letter-spacing: 1px;
@@ -180,7 +180,8 @@ main {
 			// align-items: space-around;
 			width: 100%;
 
-			.transactionsContainerIncome, .transactionsContainerExpenses {
+			.transactionsContainerIncome,
+			.transactionsContainerExpenses {
 				display: flex;
 				flex-direction: column;
 				justify-content: space-between;
@@ -195,6 +196,7 @@ main {
 					justify-content: center;
 					align-items: center;
 					margin-bottom: 10px;
+					min-height: 90px;
 					padding: 5px;
 					width: 80%;
 					border: 1px solid rgba(0, 0, 0, 0.193);
@@ -377,7 +379,7 @@ main {
 	}
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 800px) {
 	header {
 		margin-bottom: 50px;
 	}
@@ -393,7 +395,11 @@ main {
 		}
 
 		.transactions {
-			height: 450px;
+			height: 420px;
+
+			.title {
+				margin-top: 0;
+			}
 
 			.transaction-list {
 				flex-direction: row;
