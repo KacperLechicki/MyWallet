@@ -70,13 +70,14 @@ const createNewTransaction = () => {
 	const newTransaction = document.createElement('div');
 	newTransaction.classList.add('transaction');
 	newTransaction.setAttribute('id', ID);
+	const newValue = parseFloat(newTransactionAmount.value).toFixed(2);
 
 	selectCategory();
 
 	checkCategory(selectedCategory);
 
 	newTransaction.innerHTML = `<p class="transaction-name">${categoryIcon} ${newTransactionName.value}</p>
-    <p class="transaction-amount">${newTransactionAmount.value}zł <button class="delete" onclick="deleteTransaction(${ID})"><i class="fas fa-times"></i></button></p>`;
+    <p class="transaction-amount">${newValue}zł <button class="delete" onclick="deleteTransaction(${ID})"><i class="fas fa-times"></i></button></p>`;
 
 	newTransactionAmount.value > 0
 		? transactionContainerIncome.appendChild(
@@ -123,7 +124,7 @@ const checkCategory = (transaction) => {
 };
 
 const countMoney = (money) => {
-	const newMoney = money.reduce((a, b) => a + b);
+	const newMoney = (money.reduce((a, b) => a + b)).toFixed(2);
 	funds.textContent = `${newMoney}zł`;
 
 	if (newMoney > 0) {
