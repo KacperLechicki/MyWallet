@@ -124,7 +124,7 @@ const checkCategory = (transaction) => {
 };
 
 const countMoney = (money) => {
-	const newMoney = (money.reduce((a, b) => a + b)).toFixed(2);
+	const newMoney = money.reduce((a, b) => a + b).toFixed(2);
 	funds.textContent = `${newMoney}zł`;
 
 	if (newMoney > 0) {
@@ -153,6 +153,13 @@ const deleteTransaction = (ID) => {
 	countMoney(moneyArr);
 };
 
+const deleteAllTransactions = () => {
+	transactionContainerIncome.innerHTML = '';
+	transactionContainerExpenses.innerHTML = '';
+	funds.textContent = '0.00zł';
+	moneyArr = [0];
+};
+
 //----------------------------------------------------------------
 //----------------------------------------------------------------
 //----------------------------------------------------------------
@@ -162,3 +169,4 @@ const deleteTransaction = (ID) => {
 addTransactionBtn.addEventListener('click', showPanel);
 cancelBtn.addEventListener('click', hidePanel);
 saveBtn.addEventListener('click', checkForm);
+deleteAllBtn.addEventListener('click', deleteAllTransactions);
