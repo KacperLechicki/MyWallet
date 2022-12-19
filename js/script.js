@@ -176,6 +176,7 @@ const deleteAllTransactions = () => {
 	transactionContainerExpenses.innerHTML = '';
 	funds.textContent = '0.00zł';
 	moneyArr = [0];
+	funds.style.color = 'var(--mainTextDark)';
 };
 
 const changeStyleToDark = () => {
