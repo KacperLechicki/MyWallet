@@ -140,7 +140,7 @@ main {
 				}
 
 				.light {
-					background-color: var(--mainTextLight);
+					background-color: #c4c9d8;
 
 					&:hover {
 						box-shadow: 0 0 15px #8b919e;
@@ -148,7 +148,7 @@ main {
 				}
 
 				.dark {
-					background-color: var(--mainTextDark);
+					background-color: #0f1225;
 
 					&:hover {
 						box-shadow: 0 0 15px #0f1225;
@@ -202,7 +202,7 @@ main {
 					min-height: 90px;
 					padding: 5px;
 					width: 80%;
-					border: 1px solid rgba(0, 0, 0, 0.193);
+					border: 1px solid var(--borderDark);
 					border-radius: 8px;
 
 					&-amount {
@@ -224,6 +224,7 @@ main {
 
 							i {
 								font-size: 2rem;
+								color: var(--mainTextDark);
 							}
 
 							&:hover {
@@ -347,13 +348,13 @@ main {
 		margin: 0 15px;
 		padding: 8px 16px;
 		font-size: 1.4rem;
-		border: none;
+		border: 1px solid var(--mainTextLight);
 		border-radius: 5px;
 		cursor: pointer;
 		transition: background-color 0.1s, color 0.3s, box-shadow 0.15s;
 
 		&:hover {
-			background-color: rgba(38, 43, 78, 0.609);
+			background-color: var(--hoverDark);
 			color: var(--mainTextLight);
 		}
 
