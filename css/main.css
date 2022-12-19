@@ -318,7 +318,7 @@ main .transactions .transaction-list .expenses-area .transaction-amount {
 .add-transaction-panel input,
 .add-transaction-panel select {
   padding: 6px 14px;
-  width: 70%;
+  width: clamp(220px, 70%, 400px);
   border: 1px solid black;
   border-radius: 5px;
 }
@@ -333,6 +333,7 @@ main .transactions .transaction-list .expenses-area .transaction-amount {
 .add-transaction-panel .panel-buttons {
   display: flex;
   justify-content: center;
+  margin-top: 15px;
 }
 .add-transaction-panel button {
   margin: 0 15px;
