@@ -87,6 +87,7 @@ const createNewTransaction = () => {
 		  ) && newTransaction.classList.add('expense');
 
 	moneyArr.push(parseFloat(newTransactionAmount.value));
+	countMoney(moneyArr);
 
 	hidePanel();
 	ID++;
@@ -118,6 +119,19 @@ const checkCategory = (transaction) => {
 		default:
 			categoryIcon = '<i class="fas fa-money-bill-wave"></i>';
 			break;
+	}
+};
+
+const countMoney = (money) => {
+	const newMoney = money.reduce((a, b) => a + b);
+	funds.textContent = `${newMoney}zł`;
+
+	if (newMoney > 0) {
+		funds.style.color = 'rgb(37, 167, 102)';
+	} else if (newMoney < 0) {
+		funds.style.color = 'rgb(190, 56, 46)';
+	} else {
+		funds.style.color = 'var(--mainTextDark)';
 	}
 };
 
